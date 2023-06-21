@@ -3,8 +3,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
-import os
 
+# Use case: enter leetcode URL to get file name and explanation
 # 옵션 생성
 options = webdriver.ChromeOptions()
 # options.add_experimental_option("detach", True)
@@ -24,7 +24,7 @@ browser.execute_script(
 
 sleep(5)
 problem_title = browser.find_element(By.XPATH,
-									 '//*[@id="qd-content"]/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[1]/div[1]/div/div')
+									 '//*[@id="qd-content"]/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[1]/div[1]/div/span')
 
 problem_description = browser.find_element(By.XPATH,
 										   '//*[@id="qd-content"]/div[1]/div/div/div/div[2]/div/div/div[3]/div')
